@@ -1,0 +1,41 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="../components/core-ajax/core-ajax.html">
+<!--
+ADAPTED FROM
+  @homepage http://www.polymer-project.org/docs/start/tutorial.html
+
+  Consume local organizers.json
+-->
+
+<!--
+
+  @attribute organizers
+  @type Array
+  @default []
+-->
+<polymer-element name="organizer-service" attributes="organizers">
+  <template>
+    <style>
+    :host {
+      display: none;
+    }
+    </style>
+    <core-ajax id="ajax"
+      auto
+      url="../api/organizers.json"
+      on-core-response="{{organizersLoaded}}"
+      handleAs="json">
+    </core-ajax>
+  </template>
+  <script>
+  Polymer('organizer-service', {
+    created: function() {
+      this.organizers = [];
+    },
+    organizersLoaded: function() {
+      // Make a copy of the loaded data
+      this.organizers = this.$.ajax.response.slice(0);
+    }
+  });
+  </script>
+</polymer-element>
