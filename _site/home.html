@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
+  <script src="components/webcomponentsjs/webcomponents.js"></script>
+
+  <link rel="import" href="components/paper-checkbox/paper-checkbox.html">
+  <link rel="import" href="components/font-roboto/roboto.html">
+  <link rel="import" href="custom_components/organizer-list.html">
+  <link rel="import" href="custom_components/organizer-card.html">
+  <link rel="import" href="custom_components/footer.html">
+  <link rel="import" href="custom_components/app-globals.html">
+
+  <link rel="import" href="config.html">
+
+  <style shim-shadowdom>
+    body {
+      font-family: RobotoDraft, 'Helvetica Neue', Helvetica, Arial;
+      margin: 0;
+      padding: 24px;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      -webkit-touch-callout: none;
+  }
+  core-header-panel {
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  core-toolbar {
+    background: #03a9f4;
+    color: white;
+  }
+ organizer-card {
+      margin: 30px;
+      width: 290px;
+  }
+
+
+  </style>
+
+</head>
+<body unresolved>
+  <app-globals id="globals"></app-globals>
+
+
+  <h1>GDG Dubai</h1>
+  <p>Welcome to the official Dubai Google Developer Group GDG Dubai.
+
+    Google Developer Group is a Dubai-based non-profit developers group to learn, share and know more about Google technologies. The group was started by a group of Google enthusiasts who are interested in using Google's evolving technologies and APIs. GDG Dubai aims is to be a platform for sharing knowledge and experience, and to enrich the region with new ideas and innovation.
+
+    The membership is open to newbies, developers, managers and organizations who are interested in Google's technologies or use them as part of their projects.
+
+    GDG Dubai is an independent user group with an interest in Google technology and the content from this group is entirely independent from Google, the corporation."
+  </p>
+
+<div class="container" horizontal layout wrap>
+  <h2 class="">Organizers</h2>
+  <organizer-list show="all"></organizer-list>
+
+</div>
+
+  </div>
+
+
+
+  <page-footer></page-footer>
+
+</body>
+</html>

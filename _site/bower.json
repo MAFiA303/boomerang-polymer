@@ -1,0 +1,27 @@
+{
+  "name": "gdgtc-site-polymer",
+  "version": "0.0.0",
+  "homepage": "https://github.com/gdg-x/boomerang-polymer",
+  "authors": [
+    "Lloyd Cledwyn <cledwyn@gmail.com>",
+    "GDG-X <info@gdgd-x.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#master",
+    "core-elements": "Polymer/core-elements#master",
+    "paper-elements": "Polymer/paper-elements#master",
+    "paper-fab": "Polymer/paper-fab#master",
+    "font-roboto": "Polymer/font-roboto#master",
+    "core-icons": "Polymer/core-icons#master",
+    "polymer-jsonp": "Polymer/polymer-jsonp#~0.3.0"
+  }
+}

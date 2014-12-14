@@ -1,0 +1,65 @@
+<link rel="import" href="../components/polymer/polymer.html">
+<link rel="import" href="past-event-service.html">
+<link rel="import" href="past-event-card.html">
+<link rel="import" href="past-event-topic.html" />
+
+<polymer-element name="past-event-list" attributes="show">
+  <template>
+    <style>
+    :host {
+      display: block;
+      width: 100%;
+    }
+    past-event-card{
+      margin-bottom: 30px;
+    }
+    organizer-card {
+      margin: 30px;
+      width: 290px;
+    }
+    </style>
+
+    <past-event-service id="service" pastevents="{{pastevents}}" ></past-event-service>
+    
+    <div horizontal  layout wrap>
+      <template repeat="{{event in pastevents.events}}" topics="{{event.topics}}" pastevents="{{pastevents}}">
+        <past-event-card sponsorlink={{event.sponsorlink}}>
+          <meetup-title>{{event.title}}</meetup-title>
+          <location>{{event.locationname}}</location>
+          <datetime>{{event.date}}</datetime>
+          <sponsor>{{event.sponsor}}</sponsor>
+        
+        <topiccontent>
+          <template repeat="{{topic in event.topics}}" >
+            <past-event-topic>
+            <topictitle>{{topic.title}}</topictitle>
+            <speakername>{{topic.speakername}}</speakername>
+            <speakertagline>{{topic.speakertitle}}</speakertagline>
+            <speakerlink hidden?={{topic.hidespeakerlink}}><a href="{{topic.speakerlink}}" target="_top"><img src="https://getfavicon.appspot.com/{{topic.speakerlink}}" alt="ico" width="16" height="16" />{{topic.speakerlink}}</a></speakerlink>
+            <lecturevid hidden?={{topic.hideyoutubelink}}><a href="{{topic.youtubeurl}}" target="_top"><img src="https://getfavicon.appspot.com/{{topic.youtubeurl}}" alt="ico" width="16" height="16" />Watch on YouTube</a></lecturevid>
+            <description>{{topic.description}}</description>
+            </past-event-topic>
+            <p>&nbsp;</p>
+          </template>
+        </topiccontent>
+       </past-event-card>
+     </template>
+    </div>
+
+  </template>
+
+  <script>
+  Polymer({
+    ready: function() {
+         // console.log(this.pastevents.topics);
+         // for (var i = 0; i < this.pastevents.topics.length; ++i) {
+         //   console.log(this.pastevents.topics[i]);
+         // }
+       },
+         whatTopics: function(topics) {
+      // no service backend, just log the change
+      console.log(topics);
+    }
+      });
+  </script>
+</polymer-element>
